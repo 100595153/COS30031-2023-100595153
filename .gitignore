@@ -1,0 +1,70 @@
+# This is a comment. It is ignored. So are blank lines.
+
+# Add patterns to this files to tell git to ignore (not track) certain files.
+# For example - DO NOT include temporary files or final build binaries!!
+#
+# * is a "wild-card" match (so *.log will ignore any file ending with .log)
+# ! is "except" to add something (so make is)
+#
+# It can be very useful to search for a .gitignore file for your IDE.
+# Copy and paste the relevant bits. Add to this file as you go.
+
+
+# Note - this only applies when adding files. If you already have files in the repo, they will still be included.
+
+# ignore this type of mac os/Windows files ...
+.DS_Store
+Thumbs.db
+
+# ignore byte-compiled python files
+__pycache__/
+*.pyc
+
+# Ignore some typical typical folders for "generated" files ...
+bin/
+gen/
+out/
+
+# Add files specific to your IDE / dev environment and build system
+
+# Files built by Visual Studio
+*_i.c
+*_p.c
+*_h.h
+*.ilk
+*.meta
+*.obj
+*.iobj
+*.pch
+*.pdb
+*.ipdb
+*.pgc
+*.pgd
+*.rsp
+*.sbr
+*.tlb
+*.tli
+*.tlh
+*.tmp
+*.tmp_proj
+*_wpftmp.csproj
+*.log
+*.vspscc
+*.vssscc
+.builds
+*.pidb
+*.svclog
+*.scc
+
+# vscode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+# Local History for vscode
+.history/
+
+# add others as you go ...

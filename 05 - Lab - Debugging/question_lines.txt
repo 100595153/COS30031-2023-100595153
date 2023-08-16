@@ -1,0 +1,35 @@
+Q.1 [line 55] What is the difference between a struct and a class? 
+Q.2 [line 63] What are function declarations? 
+Q.3 [line 67] Why are variable names not needed here? 
+Q.4 [line 75] Does your IDE know if this method is used? 
+Q.5 [line 86] un-initialised values ... what this show and why? 
+Q.6 [line 95] Did this work as expected? 
+Q.7 [line 97] Initialisation list - do you know what are they? 
+Q.8 [line 113] Should show age=1, x=1, y=2. Does it? 
+Q.9 [line 117] Something odd here. What and why? 
+Q.10 [line 128] showParticle(p1) doesn't show 5,6,7 ... Why? 
+Q.11 [line 153] So what does -> mean (in words)? 
+Q.12 [line 154] Do we need to put ( ) around *p1_ptr? 
+Q.13 [line 160] What is the dereferenced pointer (from the example above)? 
+Q.14 [line 165] Is p1 stored on the heap or stack? 
+Q.15 [line 166] What is p1_ptr pointing to now? (Has it changed?) 
+Q.16 [line 172] Is the current value of p1_ptr good or bad? Explain 
+Q.17 [line 175] Is p1 still available? Explain. 
+Q.18 [line 180] <deleted - ignore> :) 
+Q.19 [line 189] Uncomment the next code line - will it compile? 
+Q.20 [line 192] Does your IDE tell you of any issues? If so, how? 
+Q.21 [line 200] MAGIC NUMBER?! What is it? Is it bad? Explain! 
+Q.22 [line 207] Explain in your own words how the array size is calculated. 
+Q.23 [line 375] What is the difference between this function signature and 
+Q.24 [line 380] Uncomment the following. It gives different values to those we saw before 
+Q.25 [line 219] Change the size argument to 10 (or similar). What happens? 
+Q.26 [line 237] What is "hex" and what does it do? (url in your notes) 
+Q.27 [line 242] What is new and what did it do? 
+Q.28 [line 252] What is delete and what did it do? 
+Q.29 [line 256] What happens when we try this? Explain. 
+Q.30 [line 265] So, what is the difference between NULL and nullptr and 0? 
+Q.31 [line 267] What happens if you try this? (A zero address now, so ...) 
+Q.32 [line 302] Are default pointer values in an array safe? Explain. 
+Q.33 [line 317] We should always have "delete" to match each "new". 
+Q.34 [line 325] Should we set pointers to nullptr? Why? 
+Q.35 [line 330] How do you create an array with new and set the size? 

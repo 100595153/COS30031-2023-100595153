@@ -6,12 +6,12 @@ using namespace std;
 int main()
 {
     Grid *world = new Grid();
-    char input = ' ';
 
+    cout << "Welcome to Grid World: Griddy, Set, Go" << endl;
 
-    cout << "Welcome to GridWorld: Quantised Excitement. Fate is waiting for you!\n";
+    world->Render();
 
-    while (input != 'q')
+    while (world->IsRunning())
     {
         world->Update();
 

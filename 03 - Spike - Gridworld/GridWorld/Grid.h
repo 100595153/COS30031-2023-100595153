@@ -1,6 +1,8 @@
 #pragma once
+#include <vector>
+#include <iostream>
 
-#include "Player.h"
+using namespace std;
 
 class Grid
 {
@@ -16,11 +18,19 @@ private:
 		{ '#', '#', ' ', '#', '#', '#', '#', '#' },
 	};
 
-	Player *player;
+	int pX;
+	int pY;
+
+	vector<char> moves;
+	bool running;
+
+	void GetMoves();
 
 public:
 	Grid();
 	~Grid();
+
+	bool IsRunning();
 
 	void Update();
 	void Render();

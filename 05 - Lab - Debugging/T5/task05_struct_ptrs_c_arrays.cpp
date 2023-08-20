@@ -88,7 +88,7 @@ int main()
         // Note: your IDE might be warning or making a note - if so note that
         // in your answer.
         cout << "Q.5: a with uninitialised values ? ... ";
-        showParticle(a);
+        //showParticle(a);
         a.age = 0;
         a.x = 10;
         a.y = 20;
@@ -107,7 +107,7 @@ int main()
 
     // 2. Get a particle with the values we pass to the function
     //    (When you are up to this section, change false to true. Keeps things compact)
-    if (false) {
+    if (true) {
         cout << " << Section 2 >>" << endl;
         Particle p1 = getParticleWith(1,2,3);
         cout << "Q.8: p1 with 1,2,3 ? ... ";
@@ -118,7 +118,7 @@ int main()
         showParticle(p1); // #TODO: Q.9 Something odd here. What and why?
         // hint: debug, inspect and look at data type details ...
     }
-
+#if false
     // 3. Set values in a particle that we already have
     if (false) {
         cout << " << Section 3 >>" << endl;
@@ -278,7 +278,6 @@ int main()
         }
     }
 
-
     // 7. Array of pointers to structs
     if (false) {
         cout << " << Section 7 >>" << endl;
@@ -330,7 +329,7 @@ int main()
         // Note: if we dynamically created the array (with new), we should clean that up too.
         // #TODO: Q.35 How do you create an array with new and set the size?
     }
-
+#endif
     return 0;
 }
 

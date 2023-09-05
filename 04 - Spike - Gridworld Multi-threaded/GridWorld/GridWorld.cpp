@@ -3,37 +3,39 @@
 #include "Grid.h"
 
 using namespace std;
+using namespace std::chrono;
 
-void update()
+void update(Grid* world)
 {
-    cout << "Update" << endl;
+    world->Update();
 }
 
-void render()
+void render(Grid* world)
 {
-    cout << "Render" << endl;
+    world->Render();
 }
 
 int main()
 {
     Grid* world = new Grid();
 
-    thread t1(update);
-    thread t2(render);
+    thread t1(update, world);
+    thread t2(render, world);
 
-    int freq = 60;
-
-    cout << "Welcome to Grid World: Griddy, Set, Go" << endl;
-
-    world->Render();
-
-    //long timelastcall = timeGetTime();
     while (world->IsRunning())
     {
-        if(true)
-            t1.join();
+        t1.join();
         t2.join();
+
+        t1 = thread(update, world);
+        t2 = thread(render, world);
     }
 
+    t2.join();
+
     cout << endl << "Thanks for playing!" << endl;
+
+    delete world;
+
+    return 0;
 }

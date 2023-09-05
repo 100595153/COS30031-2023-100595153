@@ -88,6 +88,8 @@ void Grid::Update()
 
 void Grid::Render()
 {
+	cout << header;
+
 	char dir = ' ';
 	
 	if (running)

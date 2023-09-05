@@ -19,4 +19,6 @@ int main()
     }
 
     cout << endl << "Thanks for playing!" << endl;
+
+    return 0;
 }

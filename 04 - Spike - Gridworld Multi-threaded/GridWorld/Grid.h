@@ -18,6 +18,7 @@ private:
 		{ '#', '#', ' ', '#', '#', '#', '#', '#' },
 	};
 
+	string header = "Welcome To Grid World: Griddy, Set, Go\n";
 	int pX;
 	int pY;
 

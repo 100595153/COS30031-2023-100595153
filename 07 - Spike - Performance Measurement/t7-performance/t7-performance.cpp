@@ -6,6 +6,26 @@
 using namespace std;
 using namespace std::chrono;
 
+// - count char using slow repeated string::find_first_of
+int count_char_using_find_first_of(string s, char delim)
+{
+	int count = 0;
+	// note: string::size_type pos = s.find_first_of(delim);
+	auto pos = s.find_first_of(delim);
+	while ((pos = s.find_first_of(delim, pos)) != string::npos)
+	{
+		count++;
+		pos++;
+	}
+	return count;
+}
+
+// - count char using fast std::count
+int count_char_using_count(string s, char delim)
+{
+	return count(s.begin(), s.end(), delim);
+}
+
 void SortingAlgorithm(vector<int> toSort)
 {
 	int size = toSort.size();
@@ -88,17 +108,54 @@ void RampDownLinear(int runs)
 	SingleExecution(1);
 }
 
+void ComparisonTest(int runs)
+{
+	string s1 = "s";
+	
+	auto start = chrono::steady_clock::now();
+	auto end = chrono::steady_clock::now();
+	auto diff = duration_cast<nanoseconds>(end - start).count();
+
+	for (int i = 0; i < runs; i++)
+	{
+		s1 += "s";
+		start = chrono::steady_clock::now();
+
+		count_char_using_find_first_of(s1, 's');
+
+		end = chrono::steady_clock::now();
+		diff = duration_cast<nanoseconds>(end - start).count();
+
+		cout << "Run " << i << ": " << diff << endl;
+	}
+
+	cout << "--------------------------------------------" << endl;
+
+	s1 = "";
+
+	for (int i = 0; i < runs; i++)
+	{
+		s1 += "s";
+		start = chrono::steady_clock::now();
+
+		count_char_using_count(s1, 's');
+
+		end = chrono::steady_clock::now();
+		diff = duration_cast<nanoseconds>(end - start).count();
+
+		cout << "Run " << i << ": " << diff << endl;
+	}
+}
+
 void RampUpExponential(int scale, int runs)
 {
 	for (int i = 1; i < pow(scale, runs); i = i * scale)
 	{
 		SingleExecution(i);
 	}
-
-	
 }
 
-/*int main()
+int main()
 {
 	//Single Execution Block
 	if (false)
@@ -114,9 +171,8 @@ void RampUpExponential(int scale, int runs)
 		cout << endl;
 	}
 
-
 	//Ramp-up Testing Block
-	if (true)
+	if (false)
 	{
 		cout << "----- Ramp Tests -----" << endl;
 
@@ -125,16 +181,19 @@ void RampUpExponential(int scale, int runs)
 		cout << endl;
 
 
-		//cout << "Ramp-Down Linear:" << endl;
-		//RampDownLinear(10);
-		//cout << endl;
+		cout << "Ramp-Down Linear:" << endl;
+		RampDownLinear(10);
+		cout << endl;
 
 
-		//cout << "Ramp-Up Exponential:" << endl;
-		//RampUpExponential(2, 15);
-		//cout << endl;
+		cout << "Ramp-Up Exponential:" << endl;
+		RampUpExponential(2, 15);
+		cout << endl;
 	}
-	
 
-
-}*/
+	//Comparison Block
+	if (true)
+	{
+		ComparisonTest(20);
+	}
+}

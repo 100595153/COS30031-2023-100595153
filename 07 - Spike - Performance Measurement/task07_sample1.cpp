@@ -8,25 +8,7 @@ using namespace std;
 using namespace std::chrono;
 
 
-// - count char using slow repeated string::find_first_of
-int count_char_using_find_first_of(string s, char delim)
-{
-    int count = 0;
-    // note: string::size_type pos = s.find_first_of(delim);
-    auto pos = s.find_first_of(delim);
-    while ( (pos = s.find_first_of(delim, pos)) != string::npos)
-    {
-        count++;
-        pos++;
-    }
-    return count;
-}
 
-// - count char using fast std::count
-int count_char_using_count(string s, char delim)
-{
-    return count(s.begin(), s.end(), delim);
-}
 
 
 void exponential_rampup_test()

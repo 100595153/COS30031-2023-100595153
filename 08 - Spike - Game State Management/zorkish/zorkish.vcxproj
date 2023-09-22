@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{76cf179e-1b53-4c08-ae3f-38c590216f5f}</ProjectGuid>
-    <RootNamespace>t7performance</RootNamespace>
+    <ProjectGuid>{bb156368-4e55-43d6-a2dd-6fe8b8dc05fd}</ProjectGuid>
+    <RootNamespace>zorkish</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -127,7 +127,23 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="t7-performance.cpp" />
+    <ClCompile Include="About.cpp" />
+    <ClCompile Include="GameManager.cpp" />
+    <ClCompile Include="Help.cpp" />
+    <ClCompile Include="LevelSelect.cpp" />
+    <ClCompile Include="MainMenu.cpp" />
+    <ClCompile Include="Quit.cpp" />
+    <ClCompile Include="zorkish.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="About.h" />
+    <ClInclude Include="GameManager.h" />
+    <ClInclude Include="Help.h" />
+    <ClInclude Include="LevelSelect.h" />
+    <ClInclude Include="MainMenu.h" />
+    <ClInclude Include="Quit.h" />
+    <ClInclude Include="State.h" />
+    <ClInclude Include="STATES.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

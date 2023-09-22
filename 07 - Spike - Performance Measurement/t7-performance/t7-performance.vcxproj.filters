@@ -18,8 +18,5 @@
     <ClCompile Include="t7-performance.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\task07_sample1.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
 </Project>

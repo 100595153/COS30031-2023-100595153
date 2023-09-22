@@ -74,7 +74,6 @@ void RampUpLinear(int runs)
 
 	for (int i = 10; i <= runs; i += 10 )
 	{
-		cout << i << endl;
 		SingleExecution(i);
 	}
 }
@@ -95,9 +94,11 @@ void RampUpExponential(int scale, int runs)
 	{
 		SingleExecution(i);
 	}
+
+	
 }
 
-int main()
+/*int main()
 {
 	//Single Execution Block
 	if (false)
@@ -124,16 +125,16 @@ int main()
 		cout << endl;
 
 
-		cout << "Ramp-Down Linear:" << endl;
-		RampDownLinear(10);
-		cout << endl;
+		//cout << "Ramp-Down Linear:" << endl;
+		//RampDownLinear(10);
+		//cout << endl;
 
 
-		cout << "Ramp-Up Exponential:" << endl;
-		RampUpExponential(2, 10);
-		cout << endl;
-
+		//cout << "Ramp-Up Exponential:" << endl;
+		//RampUpExponential(2, 15);
+		//cout << endl;
 	}
+	
 
 
-}
+}*/

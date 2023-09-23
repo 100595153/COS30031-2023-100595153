@@ -21,7 +21,7 @@ void MainMenu::update()
 		_manager->push_state(new LevelSelect(_manager));
 		break;
 	case '2':
-		//_manager->push_state(new HallOfFame(_manager));
+		_manager->push_state(new HallOfFame(_manager));
 		break;
 	case '3':
 		_manager->push_state(new Help(_manager));

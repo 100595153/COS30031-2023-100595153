@@ -16,13 +16,10 @@ void LevelSelect::update()
 	switch (_command)
 	{
 	case '1':
-		//_manager->push_state(new Gameplay(_manager));
-		break;
 	case '2':
-		//_manager->push_state(new Gameplay(_manager));
-		break;
 	case '3':
-		//_manager->push_state(new Gameplay(_manager));
+		_manager->pop_state();
+		_manager->push_state(new Gameplay(_manager));
 		break;
 	default:
 		cout << "Invalid input." << endl;

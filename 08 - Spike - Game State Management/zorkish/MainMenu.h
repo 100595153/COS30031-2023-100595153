@@ -2,6 +2,7 @@
 #include "GameManager.h"
 #include "State.h"
 #include "About.h"
+#include "HallOfFame.h"
 #include "Help.h"
 #include "LevelSelect.h"
 #include "Quit.h"

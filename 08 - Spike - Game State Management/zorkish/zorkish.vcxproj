@@ -129,19 +129,25 @@
   <ItemGroup>
     <ClCompile Include="About.cpp" />
     <ClCompile Include="GameManager.cpp" />
+    <ClCompile Include="Gameplay.cpp" />
+    <ClCompile Include="HallOfFame.cpp" />
     <ClCompile Include="Help.cpp" />
     <ClCompile Include="LevelSelect.cpp" />
     <ClCompile Include="MainMenu.cpp" />
     <ClCompile Include="Quit.cpp" />
+    <ClCompile Include="Score.cpp" />
     <ClCompile Include="zorkish.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="About.h" />
     <ClInclude Include="GameManager.h" />
+    <ClInclude Include="Gameplay.h" />
+    <ClInclude Include="HallOfFame.h" />
     <ClInclude Include="Help.h" />
     <ClInclude Include="LevelSelect.h" />
     <ClInclude Include="MainMenu.h" />
     <ClInclude Include="Quit.h" />
+    <ClInclude Include="Score.h" />
     <ClInclude Include="State.h" />
     <ClInclude Include="STATES.h" />
   </ItemGroup>

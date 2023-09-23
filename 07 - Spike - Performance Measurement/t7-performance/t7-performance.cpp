@@ -6,6 +6,23 @@
 using namespace std;
 using namespace std::chrono;
 
+//https://stackoverflow.com/questions/440133/how-do-i-create-a-random-alpha-numeric-string-in-c
+//Borrowed code.
+string gen_random(const int len) {
+	static const char alphanum[] =
+		"0123456789"
+		"ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+		"abcdefghijklmnopqrstuvwxyz";
+	string tmp_s;
+	tmp_s.reserve(len);
+
+	for (int i = 0; i < len; ++i) {
+		tmp_s += alphanum[rand() % (sizeof(alphanum) - 1)];
+	}
+
+	return tmp_s;
+}
+
 // - count char using slow repeated string::find_first_of
 int count_char_using_find_first_of(string s, char delim)
 {
@@ -108,43 +125,33 @@ void RampDownLinear(int runs)
 	SingleExecution(1);
 }
 
-void ComparisonTest(int runs)
+void ComparisonTest(string s)
 {
-	string s1 = "s";
-	
 	auto start = chrono::steady_clock::now();
 	auto end = chrono::steady_clock::now();
 	auto diff = duration_cast<nanoseconds>(end - start).count();
 
-	for (int i = 0; i < runs; i++)
-	{
-		s1 += "s";
-		start = chrono::steady_clock::now();
+	start = chrono::steady_clock::now();
 
-		count_char_using_find_first_of(s1, 's');
+	count_char_using_find_first_of(s, 's');
 
-		end = chrono::steady_clock::now();
-		diff = duration_cast<nanoseconds>(end - start).count();
+	end = chrono::steady_clock::now();
+	diff = duration_cast<nanoseconds>(end - start).count();
 
-		cout << "Run " << i << ": " << diff << endl;
-	}
+	cout << "Find First Of: " << diff << endl;
 
+	
+
+	
+	start = chrono::steady_clock::now();
+	
+	count_char_using_count(s, 's');
+
+	end = chrono::steady_clock::now();
+	diff = duration_cast<nanoseconds>(end - start).count();
+
+	cout << "Count: " << diff << endl;
 	cout << "--------------------------------------------" << endl;
-
-	s1 = "";
-
-	for (int i = 0; i < runs; i++)
-	{
-		s1 += "s";
-		start = chrono::steady_clock::now();
-
-		count_char_using_count(s1, 's');
-
-		end = chrono::steady_clock::now();
-		diff = duration_cast<nanoseconds>(end - start).count();
-
-		cout << "Run " << i << ": " << diff << endl;
-	}
 }
 
 void RampUpExponential(int scale, int runs)
@@ -155,16 +162,28 @@ void RampUpExponential(int scale, int runs)
 	}
 }
 
+void RampUpLinearComp(int runs)
+{
+	string s;
+
+	for (int i = 1; i <= pow(10, runs); i *= 10)
+	{
+		cout << i << endl;
+		s = gen_random(i * 10);
+		ComparisonTest(s);
+	}
+}
+
 int main()
 {
 	//Single Execution Block
-	if (false)
+	if (true)
 	{
-		cout << "----- Single Tests -----" << endl;
+		//cout << "----- Single Tests -----" << endl;
 
-		cout << "Test 1: " << endl;
-		SingleExecution(1);
-		cout << endl;
+		//cout << "Test 1: " << endl;
+		//SingleExecution(1);
+		//cout << endl;
 
 		cout << "Test 2: " << endl;
 		MultiExecution(10);
@@ -192,8 +211,15 @@ int main()
 	}
 
 	//Comparison Block
-	if (true)
+	if (false)
 	{
-		ComparisonTest(20);
+		string s = "According to all known laws of aviation, there is no way a bee should be able to fly. Its wings are too small to get its fat little body off the ground. The bee, of course, flies anyway because bees don't care what humans think is impossible. Yellow, black.Yellow, black. Yellow, black.Yellow, black. Ooh, black and yellow! Let's shake it up a little. Barry! Breakfast is ready! Coming! Hang on a second. Hello? Barry? Adam? Can you believe this is happening? I can't. I'll pick you up. Looking sharp. Use the stairs.Your father paid good money for those. Sorry. I'm excited. Here's the graduate. We're very proud of you, son. A perfect report card, all B's. Very proud. Ma! I got a thing going here. You got lint on your fuzz. Ow!That's me! Wave to us!We'll be in row 118,000. Bye! Barry, I told you, stop flying in the house! Hey, Adam. Hey, Barry. Is that fuzz gel? A little.Special day, graduation. Never thought I'd make it. Three days grade school, three days high school.Those were awkward. Three days college. I'm glad I took a day and hitchhiked around the hive. You did come back different. Hi, Barry. Artie, growing a mustache ? Looks good. Hear about Frankie? Yeah.";
+		ComparisonTest(s);
+		ComparisonTest(s);
+		ComparisonTest(s);
+
+		cout << "------------------------------------------------" << endl;
+
+		RampUpLinearComp(10);
 	}
 }

@@ -1,6 +1,10 @@
 #include <iostream>
 #include <fstream>
+#include <string>
+#include <vector>
+#include "json.hpp"
 
+using json = nlohmann::json;
 using namespace std;
 
 struct Player
@@ -59,11 +63,71 @@ void partA()
     print_player(player);
 }
 
+string sanitize_input(string line)
+{
+    while (!line.empty() && line.front() == ' ')
+    {
+        line.erase(0);
+    }
+    return line;
+}
+
+vector<string> split_string(string line)
+{
+    size_t pos = 0;
+    string token;
+    string delimiter = ":";
+    vector<string> split;
+    while ((pos = line.find(delimiter)) != string::npos) {
+        token = line.substr(0, pos);
+        split.push_back(token);
+        line.erase(0, pos + delimiter.length());
+    }
+    split.push_back(line);
+    return split;
+}
+
+void partB()
+{
+    string line;
+
+    ifstream input_file;
+    input_file.open("test2.txt", ios::in);
+    if (input_file.is_open())
+    {
+        while (getline(input_file, line))
+        {
+            if (!line.empty() && line.front() != '#')
+            {
+                for (string s : split_string(line))
+                {
+                    cout << s << endl;
+                }
+            }
+        }
+
+        input_file.close();
+    }
+    else
+        cout << "Error writing to file.";
+}
+
+void partC()
+{
+    ifstream input_file("test3.json");
+    json data = json::parse(input_file);
+    input_file.close();
+
+    cout << data.dump(1) << endl;
+}
+
 int main()
 {
     partA();
 
-    //partB();
+    partB();
+
+    partC();
 
     return 0;
 }

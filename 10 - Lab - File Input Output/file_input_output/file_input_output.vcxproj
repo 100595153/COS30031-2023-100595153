@@ -129,6 +129,9 @@
   <ItemGroup>
     <ClCompile Include="file_input_output.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="json.hpp" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

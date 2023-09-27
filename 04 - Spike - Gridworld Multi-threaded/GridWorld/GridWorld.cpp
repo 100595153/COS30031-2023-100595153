@@ -19,23 +19,32 @@ int main()
 {
     Grid* world = new Grid();
 
-    thread t1(update, world);
-    thread t2(render, world);
+    thread update_thread(update, world);
+    thread render_thread(render, world);
 
     while (world->IsRunning())
     {
-        t1.join();
-        t2.join();
-
-        t1 = thread(update, world);
-        t2 = thread(render, world);
+        if (update_thread.joinable())
+        {
+            update_thread.join();
+            update_thread = thread(update, world);
+        }
+            
+        
+        if (render_thread.joinable())
+        {
+            render_thread.join();
+            render_thread = thread(render, world);
+        }
     }
 
-    t2.join();
+    if (update_thread.joinable())
+        update_thread.detach();
+
+    if (render_thread.joinable())
+        render_thread.join();
 
     cout << endl << "Thanks for playing!" << endl;
-
-    delete world;
 
     return 0;
 }

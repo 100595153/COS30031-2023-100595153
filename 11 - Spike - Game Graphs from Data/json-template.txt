@@ -1,0 +1,8 @@
+Location Details:
+- Name
+- Desc
+- Connections
+- Interactables
+
+
+

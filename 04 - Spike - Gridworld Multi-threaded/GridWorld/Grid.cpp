@@ -24,6 +24,8 @@ Grid::Grid()
 	GetMoves();
 }
 
+
+
 Grid::~Grid()
 {
 	delete grid;
@@ -89,20 +91,15 @@ void Grid::Update()
 void Grid::Render()
 {
 	cout << header;
-
-	char dir = ' ';
 	
 	if (running)
 	{
 		cout << "You are able to move ";
 
 		//for loop through possible move directions
-		for (int i = 0; i < moves.size(); i++)
+		for (char dir : moves)
 		{
-			dir = toupper(moves[i]);
-			cout << dir;
-			if (i + 1 != moves.size())
-				cout << ", ";
+			cout << char(toupper(dir)) << " ";
 		}
 		cout << ":" << endl;
 

@@ -128,9 +128,18 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="game_graphs.cpp" />
+    <ClCompile Include="Inventory.cpp" />
+    <ClCompile Include="Item.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Inventory.h" />
+    <ClInclude Include="Item.h" />
+    <ClInclude Include="json.hpp" />
     <ClInclude Include="Location.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="test3.json" />
+    <None Include="world1.json" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

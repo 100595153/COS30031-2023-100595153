@@ -1,8 +1,10 @@
 #pragma once
 #include <string>
 #include <map>
+#include "json.hpp"
 #include "Inventory.h"
 
+using json = nlohmann::json;
 using namespace std;
 
 class Location
@@ -15,11 +17,21 @@ private:
 
 	Inventory _inventory;
 public:
-	Location();
+	Location(json);
 	~Location();
 
+	//Descriptors
 	string getName() const;
 	string getDesc() const;
 
-	
+	//Connections
+	bool findConnection(const string&);
+	void showConnections();
+
+	//Inventory interface
+	bool findItem(const string&);
+	void viewItems();
+	bool addItem(Item*);
+	bool removeItem(const string&);
+	Item* getItem(const string&);
 };

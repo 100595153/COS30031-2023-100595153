@@ -24,6 +24,9 @@
     <ClCompile Include="Inventory.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Location.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Location.h">
@@ -41,9 +44,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="world1.json">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="test3.json">
       <Filter>Resource Files</Filter>
     </None>
   </ItemGroup>

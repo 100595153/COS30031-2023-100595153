@@ -130,6 +130,7 @@
     <ClCompile Include="game_graphs.cpp" />
     <ClCompile Include="Inventory.cpp" />
     <ClCompile Include="Item.cpp" />
+    <ClCompile Include="Location.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Inventory.h" />
@@ -138,7 +139,6 @@
     <ClInclude Include="Location.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="test3.json" />
     <None Include="world1.json" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

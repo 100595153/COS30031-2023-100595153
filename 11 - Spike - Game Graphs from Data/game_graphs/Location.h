@@ -25,7 +25,7 @@ public:
 	string getDesc() const;
 
 	//Connections
-	bool findConnection(const string&);
+	string findConnection(const string&);
 	void showConnections();
 
 	//Inventory interface

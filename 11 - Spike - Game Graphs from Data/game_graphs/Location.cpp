@@ -37,9 +37,12 @@ string Location::getDesc() const
 	return _desc;
 }
 
-bool Location::findConnection(const string& dir)
+string Location::findConnection(const string& dir)
 {
-	return _connections.find(dir) != _connections.end();
+	if (_connections.find(dir) != _connections.end())
+		return _connections[dir];
+	else
+		return "";
 }
 
 void Location::showConnections()

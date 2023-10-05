@@ -2,6 +2,7 @@
 #include <fstream>
 #include "json.hpp"
 #include "Location.h"
+#include "Manager.h"
 
 using json = nlohmann::json;
 using namespace std;
@@ -22,25 +23,12 @@ int main(int argc, char** argv)
         locations.push_back(new Location(loc));
     }
 
-    cout << "Location Test" << endl;
+    Manager manager = Manager(locations);
 
-    for (Location* loc : locations)
+    while (manager.running())
     {
-        cout << "Name: " << loc->getName() << " - " << loc->getDesc() << endl;
-        cout << "Is there east?: " << loc->findConnection("east") << endl;
-
-        cout << "Connections: ";
-        loc->showConnections();
-
-        cout << "Find me the sword: " << loc->findItem("sword") << endl;
-
-        cout << "Show me what you got: " << endl;
-        loc->viewItems();
-
-        cout << "Add a gun: " << loc->addItem(new Item("a gun lol", "blam blam.")) << endl;
-        cout << "Remove a gun: " << loc->removeItem("a gun lol") << endl;
-
-        cout << endl;
+        manager.render();
+        manager.update();
     }
 
     return 0;

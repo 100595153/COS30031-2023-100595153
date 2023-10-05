@@ -11,7 +11,7 @@
 					"name":"Blight Town"
 				},
 				{
-					"direction":"east",
+					"direction":"left",
 					"name":"Firelink Shrine"
 				}
 			],		
@@ -33,7 +33,7 @@
 			"connections":
 			[
 				{
-					"direction":"south",
+					"direction":"up",
 					"name":"Anor Londo"
 				}
 			],	

@@ -15,48 +15,70 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="game_graphs.cpp">
+    <ClCompile Include="zorkish.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Item.cpp">
+    <ClCompile Include="GameManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Inventory.cpp">
+    <ClCompile Include="MainMenu.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Location.cpp">
+    <ClCompile Include="About.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Player.cpp">
+    <ClCompile Include="Help.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Manager.cpp">
+    <ClCompile Include="LevelSelect.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Quit.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="HallOfFame.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Gameplay.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Score.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Location.h">
+    <ClInclude Include="State.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Item.h">
+    <ClInclude Include="GameManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Inventory.h">
+    <ClInclude Include="STATES.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="json.hpp">
+    <ClInclude Include="MainMenu.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Player.h">
+    <ClInclude Include="About.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Manager.h">
+    <ClInclude Include="Help.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="world1.json">
-      <Filter>Resource Files</Filter>
-    </None>
+    <ClInclude Include="LevelSelect.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Quit.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HallOfFame.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Gameplay.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Score.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

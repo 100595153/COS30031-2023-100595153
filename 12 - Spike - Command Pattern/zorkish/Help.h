@@ -1,5 +1,5 @@
 #pragma once
-#include "GameManager.h"
+#include "StateManager.h"
 #include "State.h"
 
 class Help : public State
@@ -7,7 +7,7 @@ class Help : public State
 private:
 
 public:
-	Help(GameManager*);
+	Help(StateManager*);
 	~Help();
 
 	void update();

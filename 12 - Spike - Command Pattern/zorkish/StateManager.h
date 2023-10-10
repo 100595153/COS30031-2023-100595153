@@ -5,13 +5,13 @@
 
 using namespace std;
 
-class GameManager
+class StateManager
 {
 private:
 	stack<State*> _states;
 public:
-	GameManager();
-	~GameManager();
+	StateManager();
+	~StateManager();
 
 	bool running();
 	State* current();

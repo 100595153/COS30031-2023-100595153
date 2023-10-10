@@ -1,6 +1,6 @@
 #include "LevelSelect.h"
 
-LevelSelect::LevelSelect(GameManager* manager)
+LevelSelect::LevelSelect(StateManager* manager)
 {
 	_manager = manager;
 }
@@ -16,10 +16,13 @@ void LevelSelect::update()
 	switch (_command)
 	{
 	case '1':
+		_manager->pop_state();
+		_manager->push_state(new Gameplay(_manager, "world1.json"));
+		break;
 	case '2':
 	case '3':
 		_manager->pop_state();
-		_manager->push_state(new Gameplay(_manager));
+		_manager->push_state(new Gameplay(_manager, "world1.json"));
 		break;
 	default:
 		cout << "Invalid input." << endl;

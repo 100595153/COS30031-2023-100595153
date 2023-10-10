@@ -1,6 +1,6 @@
 #include "About.h"
 
-About::About(GameManager* manager)
+About::About(StateManager* manager)
 {
 	_manager = manager;
 }

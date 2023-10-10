@@ -1,6 +1,6 @@
 #include "Quit.h"
 
-Quit::Quit(GameManager* manager)
+Quit::Quit(StateManager* manager)
 {
 	_manager = manager;
 }

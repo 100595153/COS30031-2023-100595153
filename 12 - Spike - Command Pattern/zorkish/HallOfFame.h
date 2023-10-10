@@ -1,12 +1,12 @@
 #pragma once
-#include "GameManager.h"
+#include "StateManager.h"
 #include "State.h"
 #include <iostream>
 
 class HallOfFame : public State
 {
 public:
-	HallOfFame(GameManager*);
+	HallOfFame(StateManager*);
 	~HallOfFame();
 
 	void update();

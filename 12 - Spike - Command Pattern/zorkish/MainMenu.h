@@ -1,5 +1,5 @@
 #pragma once
-#include "GameManager.h"
+#include "StateManager.h"
 #include "State.h"
 #include "About.h"
 #include "HallOfFame.h"
@@ -11,7 +11,7 @@
 class MainMenu : public State
 {
 public:
-	MainMenu(GameManager*);
+	MainMenu(StateManager*);
 	~MainMenu();
 
 	void update();

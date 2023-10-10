@@ -1,5 +1,5 @@
 #pragma once
-#include "GameManager.h"
+#include "StateManager.h"
 #include "State.h"
 
 class Quit : public State
@@ -7,7 +7,7 @@ class Quit : public State
 private:
 
 public:
-	Quit(GameManager*);
+	Quit(StateManager*);
 	~Quit();
 
 	void update();

@@ -1,11 +1,11 @@
 #pragma once
-#include "GameManager.h"
+#include "StateManager.h"
 #include "State.h"
 
 class About : public State
 {
 public:
-	About(GameManager*);
+	About(StateManager*);
 	~About();
 
 	void update();

@@ -7,9 +7,15 @@ void Gameplay::processInput()
 	cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 }
 
-Gameplay::Gameplay(GameManager* manager)
+Gameplay::Gameplay(StateManager* stateManager, string file)
 {
-	_manager = manager;
+	_stateManager = stateManager;
+
+	ifstream input_file(file);
+	json data = json::parse(input_file);
+	input_file.close();
+
+	_gameWorld = new GameWorld(data);
 }
 
 Gameplay::~Gameplay()
@@ -18,27 +24,10 @@ Gameplay::~Gameplay()
 
 void Gameplay::update()
 {
-	processInput();
-
-	if (_command == "quit")
-	{
-		_manager->pop_state();
-	}
-	else if (_command == "hiscore")
-	{
-		_manager->pop_state();
-		_manager->push_state(new Score(_manager));
-	}
-	else
-		cout << "Invalid input." << endl;
+	_gameWorld->update();
 }
 
 void Gameplay::render()
 {
-	cout
-		<< "------------------------" << endl
-		<< "This game is in early access." << endl
-		<< "To continue playing, please donate $199.99 to the following PayPal address" << endl
-		<< "acmetonto@hotmail.com" << endl
-		<< ">> ";
+	_gameWorld->render();
 }

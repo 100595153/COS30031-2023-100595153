@@ -1,6 +1,6 @@
 #include "HallOfFame.h"
 
-HallOfFame::HallOfFame(GameManager* manager)
+HallOfFame::HallOfFame(StateManager* manager)
 {
 	_manager = manager;
 }

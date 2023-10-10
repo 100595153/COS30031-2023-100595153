@@ -1,11 +1,11 @@
 #include <iostream>
-#include "GameManager.h"
+#include "StateManager.h"
 
 using namespace std;
 
 int main()
 {
-    GameManager* manager = new GameManager();
+    StateManager* manager = new StateManager();
 
     while (manager->running())
     {

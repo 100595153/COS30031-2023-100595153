@@ -1,15 +1,15 @@
 #pragma once
-#include "GameManager.h"
+#include "StateManager.h"
 #include <iostream>
 
 using namespace std;
 
-class GameManager;
+class StateManager;
 
 class State
 {
 protected:
-	GameManager* _manager = nullptr;
+	StateManager* _manager = nullptr;
 	char _command;
 
 	virtual void processInput()

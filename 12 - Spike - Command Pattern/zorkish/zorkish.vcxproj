@@ -128,28 +128,53 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="About.cpp" />
-    <ClCompile Include="GameManager.cpp" />
+    <ClCompile Include="AliasCommand.cpp" />
+    <ClCompile Include="CommandManager.cpp" />
+    <ClCompile Include="GoCommand.cpp" />
+    <ClCompile Include="Player.cpp" />
+    <ClCompile Include="StateManager.cpp" />
     <ClCompile Include="Gameplay.cpp" />
     <ClCompile Include="HallOfFame.cpp" />
     <ClCompile Include="Help.cpp" />
+    <ClCompile Include="Inventory.cpp" />
+    <ClCompile Include="Item.cpp" />
     <ClCompile Include="LevelSelect.cpp" />
+    <ClCompile Include="Location.cpp" />
     <ClCompile Include="MainMenu.cpp" />
+    <ClCompile Include="GameWorld.cpp" />
     <ClCompile Include="Quit.cpp" />
     <ClCompile Include="Score.cpp" />
     <ClCompile Include="zorkish.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="About.h" />
-    <ClInclude Include="GameManager.h" />
+    <ClInclude Include="AliasCommand.h" />
+    <ClInclude Include="Command.h" />
+    <ClInclude Include="CommandManager.h" />
+    <ClInclude Include="DebugCommand.h" />
+    <ClInclude Include="GoCommand.h" />
+    <ClInclude Include="HelpCommand.h" />
+    <ClInclude Include="InventoryCommand.h" />
+    <ClInclude Include="LookCommand.h" />
+    <ClInclude Include="StateManager.h" />
     <ClInclude Include="Gameplay.h" />
     <ClInclude Include="HallOfFame.h" />
     <ClInclude Include="Help.h" />
+    <ClInclude Include="Inventory.h" />
+    <ClInclude Include="Item.h" />
+    <ClInclude Include="json.hpp" />
     <ClInclude Include="LevelSelect.h" />
+    <ClInclude Include="Location.h" />
     <ClInclude Include="MainMenu.h" />
+    <ClInclude Include="GameWorld.h" />
+    <ClInclude Include="Player.h" />
     <ClInclude Include="Quit.h" />
     <ClInclude Include="Score.h" />
     <ClInclude Include="State.h" />
     <ClInclude Include="STATES.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="world1.json" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

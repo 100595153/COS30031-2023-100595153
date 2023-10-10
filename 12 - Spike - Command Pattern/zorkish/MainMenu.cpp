@@ -1,6 +1,6 @@
 #include "MainMenu.h"
 
-MainMenu::MainMenu(GameManager* manager)
+MainMenu::MainMenu(StateManager* manager)
 {
 	_manager = manager;
 }

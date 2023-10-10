@@ -1,5 +1,5 @@
 #pragma once
-#include "GameManager.h"
+#include "StateManager.h"
 #include "State.h"
 #include "Gameplay.h"
 #include <iostream>
@@ -7,7 +7,7 @@
 class LevelSelect : public State
 {
 public:
-	LevelSelect(GameManager*);
+	LevelSelect(StateManager*);
 	~LevelSelect();
 
 	void update();

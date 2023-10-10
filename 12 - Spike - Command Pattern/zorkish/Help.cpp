@@ -1,6 +1,6 @@
 #include "Help.h"
 
-Help::Help(GameManager* manager)
+Help::Help(StateManager* manager)
 {
 	_manager = manager;
 }

@@ -1,5 +1,5 @@
 #pragma once
-#include "GameManager.h"
+#include "StateManager.h"
 #include "State.h"
 #include "Quit.h"
 #include "Score.h"
@@ -12,7 +12,7 @@ private:
 
 	void processInput();
 public:
-	Score(GameManager*);
+	Score(StateManager*);
 	~Score();
 	void update();
 	void render();

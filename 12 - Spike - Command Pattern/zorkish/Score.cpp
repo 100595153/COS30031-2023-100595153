@@ -7,7 +7,7 @@ void Score::processInput()
 	cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 }
 
-Score::Score(GameManager* manager)
+Score::Score(StateManager* manager)
 {
 	_manager = manager;
 }

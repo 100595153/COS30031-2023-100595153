@@ -1,11 +1,13 @@
 #include "AliasCommand.h"
 
-bool AliasCommand::checkAlias(string)
+AliasCommand::AliasCommand(CommandManager* cm) : _commandManager(cm)
 {
-    return false;
 }
 
-void AliasCommand::addAlias(string)
+void AliasCommand::execute(vector<string> command, Player* player)
 {
-
+    if (command.size() == 3)
+        _commandManager->addCommand(command.at(1), command.at(2));
+    else
+        cout << "Invalid Alias Command." << endl;
 }

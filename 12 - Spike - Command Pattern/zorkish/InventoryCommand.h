@@ -3,5 +3,8 @@
 
 class InventoryCommand : public Command
 {
+private:
 
+public:
+	void execute(vector<string>, Player*);
 };

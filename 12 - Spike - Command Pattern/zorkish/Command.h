@@ -7,6 +7,8 @@ using namespace std;
 
 class Command
 {
+protected:
+
 public:
 	virtual void execute(vector<string>, Player*) = 0;
 };

@@ -1,15 +1,16 @@
 #pragma once
 #include "Command.h"
+#include "CommandManager.h"
+
+class CommandManager;
 
 class AliasCommand : public Command
 {
 private:
-
+	CommandManager* _commandManager;
 public:
-	bool checkAlias(string);
+	AliasCommand(CommandManager*);
+	~AliasCommand();
 
-	void addAlias(string);
-
-
-
+	void execute(vector<string>, Player*);
 };

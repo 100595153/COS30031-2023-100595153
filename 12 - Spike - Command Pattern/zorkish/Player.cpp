@@ -3,6 +3,8 @@
 Player::Player(Location* loc, Inventory* inv) : _location(loc), _inventory(inv), _health(100)
 {
 	_locName = _location->getName();
+
+	_inventory->add(new Item("shovel", "DIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIG"));
 }
 
 Player::~Player()
@@ -13,6 +15,16 @@ Player::~Player()
 
 	_location = nullptr;
 	_inventory = nullptr;
+}
+
+int Player::getHealth()
+{
+	return _health;
+}
+
+void Player::takeDamage(int damage)
+{
+	_health -= damage;
 }
 
 Inventory* Player::getInventory()

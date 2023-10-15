@@ -15,6 +15,9 @@ public:
 	Player(Location*, Inventory*);
 	~Player();
 
+	int getHealth();
+	void takeDamage(int);
+
 	Inventory* getInventory();
 
 	bool checkDirection(const string&);

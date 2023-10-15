@@ -130,7 +130,11 @@
     <ClCompile Include="About.cpp" />
     <ClCompile Include="AliasCommand.cpp" />
     <ClCompile Include="CommandManager.cpp" />
+    <ClCompile Include="DebugCommand.cpp" />
     <ClCompile Include="GoCommand.cpp" />
+    <ClCompile Include="HelpCommand.cpp" />
+    <ClCompile Include="InventoryCommand.cpp" />
+    <ClCompile Include="LookCommand.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="StateManager.cpp" />
     <ClCompile Include="Gameplay.cpp" />

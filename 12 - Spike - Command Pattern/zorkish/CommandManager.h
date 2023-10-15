@@ -17,4 +17,7 @@ public:
 	~CommandManager();
 
 	void processCommand(vector<string>);
+	void addCommand(string, string);
+
+	void showCommands();
 };

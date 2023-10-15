@@ -13,7 +13,7 @@ GameWorld::GameWorld(json data) : _running(true)
 
 	_commandManager = new CommandManager(_player);
 
-	cout << "Welcome to "
+	cout << "Welcome to Zorkish Adventure" << endl;
 }
 
 GameWorld::~GameWorld() {} //TODO

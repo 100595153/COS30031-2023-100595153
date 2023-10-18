@@ -27,7 +27,7 @@ int main(int argc, char* argv[])
 	}
 
 	//Window creation, window check, error message.
-	SDL_Window* window = SDL_CreateWindow("Task 15", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 800, 600, SDL_WINDOW_SHOWN);
+	SDL_Window* window = SDL_CreateWindow("Task 17", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 800, 600, SDL_WINDOW_SHOWN);
 	if (!window)
 	{
 		SDL_Log("Window init failed: %s", SDL_GetError());

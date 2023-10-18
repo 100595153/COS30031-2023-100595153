@@ -103,10 +103,10 @@
       <Filter>Source Files\Commands</Filter>
     </ClCompile>
     <ClCompile Include="DebugCommand.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Commands</Filter>
     </ClCompile>
     <ClCompile Include="HelpCommand.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Commands</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

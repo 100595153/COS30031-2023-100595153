@@ -71,8 +71,8 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>C:\Users\acmet\Documents\COS30031-2023-100595153\SDL2_mixer-2.6.3\include;C:\Users\acmet\Documents\COS30031-2023-100595153\SDL2\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Users\acmet\Documents\COS30031-2023-100595153\SDL2_mixer-2.6.3\lib\x64;C:\Users\acmet\Documents\COS30031-2023-100595153\SDL2\lib\x64;$(LibraryPath)</LibraryPath>
+    <IncludePath>D:\Documents\Swinburne\COS30031-2023-100595153\SDL2\include;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\Documents\Swinburne\COS30031-2023-100595153\SDL2\lib\x64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -108,12 +108,12 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\acmet\Documents\COS30031-2023-100595153\SDL2\include;C:\Users\acmet\Documents\COS30031-2023-100595153\SDL2_mixer-2.6.3\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Documents\Swinburne\COS30031-2023-100595153\SDL2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_mixer.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -133,7 +133,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\spike24_sdl2.cpp" />
+    <ClCompile Include="spike24_sdl2.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

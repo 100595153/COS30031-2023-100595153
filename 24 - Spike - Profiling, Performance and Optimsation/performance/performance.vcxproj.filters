@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\spike24_sdl2.cpp">
+    <ClCompile Include="spike24_sdl2.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

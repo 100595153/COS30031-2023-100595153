@@ -39,7 +39,7 @@ const int BOX_HEIGHT = 50;
 const int BOX_SPEED = 10;
 const int BOX_COUNT = 100;
 
-const int TEST_TIME = 3 * 1000; // ie, 3*1000 = 3 seconds
+const int TEST_TIME = 60 * 1000; // ie, 3*1000 = 3 seconds
 
 enum BoxState { CONTACT_NO, CONTACT_YES };
 

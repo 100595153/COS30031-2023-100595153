@@ -3,19 +3,13 @@
 #include <string>
 #include <cstdlib>
 #include <iostream>
+#include <vector>
+#include "Entity.h"
+#include "Rectangle.h"
+#include "Circle.h"
+#include "CollisionManager.h"
 
 using namespace std;
-
-SDL_Rect randomisePos()
-{
-	int x, y;
-	x = rand() % 701;
-	y = rand() % 501;
-
-	SDL_Rect result = { x, y, 100, 100 };
-
-	return result;
-}
 
 int main(int argc, char* argv[])
 {
@@ -27,7 +21,7 @@ int main(int argc, char* argv[])
 	}
 
 	//Window creation, window check, error message.
-	SDL_Window* window = SDL_CreateWindow("Task 15", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 800, 600, SDL_WINDOW_SHOWN);
+	SDL_Window* window = SDL_CreateWindow("Task 22", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 800, 600, SDL_WINDOW_SHOWN);
 	if (!window)
 	{
 		SDL_Log("Window init failed: %s", SDL_GetError());
@@ -37,7 +31,7 @@ int main(int argc, char* argv[])
 
 	//Renderer creation, check and error message.
 	SDL_Renderer* renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
-	if (!window)
+	if (!renderer)
 	{
 		SDL_Log("Renderer init failed: %s", SDL_GetError());
 		SDL_DestroyWindow(window);
@@ -45,25 +39,31 @@ int main(int argc, char* argv[])
 		return 4;
 	}
 
-	//Surface and Texture for background image.
-	SDL_Surface* imageSurface = SDL_LoadBMP("wamce.bmp");
-	SDL_Texture* bgTexture = SDL_CreateTextureFromSurface(renderer, imageSurface);
-	bool bgVisible = true;
-
-	//Surface and Texture for tile image.
-	SDL_Surface* tileSurface = SDL_LoadBMP("tile.bmp");
-	SDL_Texture* tileTexture = SDL_CreateTextureFromSurface(renderer, tileSurface);
-	
-	//Display rects
-	SDL_Rect tileRect = { 0, 0, 100, 100 };
-	SDL_Rect screenRect = randomisePos();
+	int desiredFPS = 165;
+	int frameDelay = 1000 / desiredFPS;
+	Uint32 frameStart;
+	int frameTime;
 
 	bool running = true;
+	bool toggleRects = true;
 	SDL_Event event;
+
+	CollisionManager* manager = new CollisionManager();
+
+	vector<Entity*> rectangles;
+	rectangles.push_back(new Rectangle("rect.bmp", new SDL_Rect({ 0, 250, 100, 100 }), 5, manager));
+	rectangles.push_back(new Rectangle("rect.bmp", new SDL_Rect({350, 250, 100, 100}), 0, manager));
+
+	vector<Entity*> circles;
+	circles.push_back(new Circle(new SDL_Rect({ 0, 300, 50, 50 }), 5, manager));
+	circles.push_back(new Circle(new SDL_Rect({ 400, 300, 50, 50 }), 0, manager));
 
 	//While open, check if I've quit, then render.
 	while (running)
 	{
+		frameStart = SDL_GetTicks();  // Get the start time of the frame
+		SDL_RenderClear(renderer);
+
 		while (SDL_PollEvent(&event))
 		{
 			if (event.type == SDL_QUIT)
@@ -74,19 +74,10 @@ int main(int argc, char* argv[])
 				switch (event.key.keysym.sym)
 				{
 				case SDLK_1:
-					tileRect = { 0, 0, 100, 100 };
-					screenRect = randomisePos();
+					toggleRects = true;
 					break;
 				case SDLK_2:
-					tileRect = { 100, 0, 100, 100 };
-					screenRect = randomisePos();
-					break;
-				case SDLK_3:
-					tileRect = { 200, 0, 100, 100 };
-					screenRect = randomisePos();
-					break;
-				case SDLK_0:
-					bgVisible = !bgVisible;
+					toggleRects = false;
 					break;
 				default:
 					break;
@@ -94,19 +85,43 @@ int main(int argc, char* argv[])
 			}
 		}
 
-		SDL_RenderClear(renderer);
-
-		if (bgVisible)
+		for (Entity* e : rectangles)
 		{
-			SDL_RenderCopy(renderer, bgTexture, nullptr, nullptr);
+			e->Update(rectangles);
 		}
 
-		SDL_RenderCopy(renderer, tileTexture, &tileRect, &screenRect);
+		for (Entity* e : circles)
+		{
+			e->Update(circles);
+		}
+
+
+		if (toggleRects)
+		{
+			for (Entity* e : rectangles)
+			{
+				e->Render(renderer);
+			}
+		}
+		else
+		{
+			for (Entity* e : circles)
+			{
+				e->Render(renderer);
+			}
+		}
+
 		SDL_RenderPresent(renderer);
+
+		// Calculate the time taken for this frame
+		frameTime = SDL_GetTicks() - frameStart;
+
+		// If the frame was rendered faster than the desired frame delay, delay to maintain the frame rate
+		if (frameTime < frameDelay) {
+			SDL_Delay(frameDelay - frameTime);
+		}
 	}
 
-
-	SDL_FreeSurface(imageSurface);
 	SDL_DestroyRenderer(renderer);
 	SDL_DestroyWindow(window);
 	SDL_Quit();

@@ -71,8 +71,8 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>C:\Users\acmet\Documents\COS30031-2023-100595153\SDL2_mixer-2.6.3\include;C:\Users\acmet\Documents\COS30031-2023-100595153\SDL2\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Users\acmet\Documents\COS30031-2023-100595153\SDL2_mixer-2.6.3\lib\x64;C:\Users\acmet\Documents\COS30031-2023-100595153\SDL2\lib\x64;$(LibraryPath)</LibraryPath>
+    <IncludePath>D:\Documents\Swinburne\COS30031-2023-100595153\SDL2_mixer-2.6.3\include;D:\Documents\Swinburne\COS30031-2023-100595153\SDL2\include;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\Documents\Swinburne\COS30031-2023-100595153\SDL2_mixer-2.6.3\lib\x64;D:\Documents\Swinburne\COS30031-2023-100595153\SDL2\lib\x64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -108,7 +108,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\acmet\Documents\COS30031-2023-100595153\SDL2_mixer-2.6.3\include;C:\Users\acmet\Documents\COS30031-2023-100595153\SDL2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Documents\Swinburne\COS30031-2023-100595153\SDL2_mixer-2.6.3\include;D:\Documents\Swinburne\COS30031-2023-100595153\SDL2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -133,7 +133,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Circle.cpp" />
+    <ClCompile Include="CollisionManager.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Rectangle.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Circle.h" />
+    <ClInclude Include="CollisionManager.h" />
+    <ClInclude Include="Entity.h" />
+    <ClInclude Include="Rectangle.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -18,5 +18,8 @@
     <ClCompile Include="spike24_sdl2.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Old.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

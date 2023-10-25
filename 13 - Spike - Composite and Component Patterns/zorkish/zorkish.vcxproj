@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{2c52a30b-13be-486a-8858-daf77d24c02a}</ProjectGuid>
-    <RootNamespace>performance</RootNamespace>
+    <ProjectGuid>{bb156368-4e55-43d6-a2dd-6fe8b8dc05fd}</ProjectGuid>
+    <RootNamespace>zorkish</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -70,14 +70,6 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>C:\Users\acmet\Documents\COS30031-2023-100595153\SDL2\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Users\acmet\Documents\COS30031-2023-100595153\SDL2\lib\x64;$(LibraryPath)</LibraryPath>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <IncludePath>D:\Documents\Swinburne\COS30031-2023-100595153\SDL2\include;$(IncludePath)</IncludePath>
-    <LibraryPath>D:\Documents\Swinburne\COS30031-2023-100595153\SDL2\lib\x64;$(LibraryPath)</LibraryPath>
-  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -112,12 +104,10 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\acmet\Documents\COS30031-2023-100595153\SDL2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -128,21 +118,74 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>D:\Documents\Swinburne\COS30031-2023-100595153\SDL2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Old.cpp" />
-    <ClCompile Include="spike24_sdl2.cpp" />
+    <ClCompile Include="About.cpp" />
+    <ClCompile Include="AliasCommand.cpp" />
+    <ClCompile Include="Closed.cpp" />
+    <ClCompile Include="CommandManager.cpp" />
+    <ClCompile Include="DebugCommand.cpp" />
+    <ClCompile Include="GoCommand.cpp" />
+    <ClCompile Include="Health.cpp" />
+    <ClCompile Include="HelpCommand.cpp" />
+    <ClCompile Include="InventoryCommand.cpp" />
+    <ClCompile Include="LookCommand.cpp" />
+    <ClCompile Include="Player.cpp" />
+    <ClCompile Include="StateManager.cpp" />
+    <ClCompile Include="Gameplay.cpp" />
+    <ClCompile Include="HallOfFame.cpp" />
+    <ClCompile Include="Help.cpp" />
+    <ClCompile Include="Inventory.cpp" />
+    <ClCompile Include="Item.cpp" />
+    <ClCompile Include="LevelSelect.cpp" />
+    <ClCompile Include="Location.cpp" />
+    <ClCompile Include="MainMenu.cpp" />
+    <ClCompile Include="GameWorld.cpp" />
+    <ClCompile Include="Quit.cpp" />
+    <ClCompile Include="Score.cpp" />
+    <ClCompile Include="zorkish.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="About.h" />
+    <ClInclude Include="AliasCommand.h" />
+    <ClInclude Include="Closed.h" />
+    <ClInclude Include="Command.h" />
+    <ClInclude Include="CommandManager.h" />
+    <ClInclude Include="Component.h" />
+    <ClInclude Include="CurrentLocation.h" />
+    <ClInclude Include="DebugCommand.h" />
+    <ClInclude Include="GameObject.h" />
+    <ClInclude Include="GoCommand.h" />
+    <ClInclude Include="Health.h" />
+    <ClInclude Include="HelpCommand.h" />
+    <ClInclude Include="InventoryCommand.h" />
+    <ClInclude Include="LookCommand.h" />
+    <ClInclude Include="StateManager.h" />
+    <ClInclude Include="Gameplay.h" />
+    <ClInclude Include="HallOfFame.h" />
+    <ClInclude Include="Help.h" />
+    <ClInclude Include="Inventory.h" />
+    <ClInclude Include="Item.h" />
+    <ClInclude Include="json.hpp" />
+    <ClInclude Include="LevelSelect.h" />
+    <ClInclude Include="Location.h" />
+    <ClInclude Include="MainMenu.h" />
+    <ClInclude Include="GameWorld.h" />
+    <ClInclude Include="Player.h" />
+    <ClInclude Include="Quit.h" />
+    <ClInclude Include="Score.h" />
+    <ClInclude Include="State.h" />
+    <ClInclude Include="STATES.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="world1.json" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

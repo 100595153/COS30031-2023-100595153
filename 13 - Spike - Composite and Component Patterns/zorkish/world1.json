@@ -1,0 +1,75 @@
+{
+	"locations":
+	[
+		{
+			"name":"Anor Londo",
+			"desc":"Some place with things in it, innit.",
+			"connections":
+			[
+				{
+					"direction":"north",
+					"name":"Blight Town"
+				},
+				{
+					"direction":"left",
+					"name":"Firelink Shrine"
+				}
+			],		
+			"inventory":
+			[
+				{
+					"name":"sword",
+					"desc":"pointy boi."
+				},
+				{
+					"name":"pointed stick",
+					"desc":"able to defend against fresh fruit."
+				}
+			]
+		},
+		{
+			"name":"Blight Town",
+			"desc":"bit of a swamp.",
+			"connections":
+			[
+				{
+					"direction":"up",
+					"name":"Anor Londo"
+				}
+			],	
+			"inventory":
+			[
+				{
+					"name":"rabbit",
+					"desc":"jumpy boi."
+				},
+				{
+					"name":"gun",
+					"desc":"oh no."
+				}
+			]
+		},
+		{
+			"name":"Firelink Shrine",
+			"desc":"links fire.",
+			"connections":
+			[
+				{
+					"direction":"west",
+					"name":"Anor Londo"
+				}
+			],	
+			"inventory":
+			[
+				{
+					"name":"fire",
+					"desc":"ouch oof."
+				},
+				{
+					"name":"water",
+					"desc":"glub glub."
+				}
+			]
+		}
+	]
+}

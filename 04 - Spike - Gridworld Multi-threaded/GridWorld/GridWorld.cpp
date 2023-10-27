@@ -13,16 +13,11 @@ void update(Grid* world)
 
 void render(Grid* world)
 {
-    auto lastframe = steady_clock::now();
-    auto now = steady_clock::now();
-
     while (world->IsRunning())
     {
-        if ((now - lastframe).count() >= .16)
-            clog << "hi" << endl;
-        //if (timepassed = 1/60)
         system("cls");
         world->Render();
+        this_thread::sleep_for(std::chrono::duration<double>(1.0/60.0));
     }
 }
 
@@ -36,7 +31,8 @@ int main()
     render_thread.join();
     update_thread.join();
 
-    //world->Render();
+    system("cls");
+    world->Render();
 
     cout << endl << "Thanks for playing!" << endl;
 

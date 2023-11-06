@@ -1,15 +1,18 @@
 #pragma once
 #include "Component.h"
 
-class Health : public Component
+class Lock : public Component
 {
 private:
-	int _health;
+	bool _locked;
 
 public:
-	Health();
-	~Health();
+	Lock();
+	~Lock();
 
+	bool GetLocked();
+	void ToggleLock();
+	
 	void Update();
 	void Render();
 

@@ -11,5 +11,5 @@ private:
 public:
 	HelpCommand(CommandManager*);
 
-	void execute(vector<string>, Player*);
+	void Execute(vector<string>, Player*);
 };

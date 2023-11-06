@@ -8,7 +8,9 @@ CommandManager::CommandManager(Player* player) : _player(player)
 	_commands.emplace("inventory", new InventoryCommand());
 	_commands.emplace("alias", new AliasCommand(this));
 	_commands.emplace("debug", new DebugCommand());
-	//_commands.emplace("quit", new QuitCommand());
+	_commands.emplace("take", new TakeCommand());
+	_commands.emplace("put", new PutCommand());
+	_commands.emplace("open", new OpenCommand());
 }
 
 CommandManager::~CommandManager()
@@ -19,7 +21,7 @@ void CommandManager::processCommand(vector<string> command)
 {
 	if (_commands.find(command.at(0)) != _commands.end())
 	{
-		_commands.at(command.at(0))->execute(command, _player);
+		_commands.at(command.at(0))->Execute(command, _player);
 	}
 	else
 		cout << "Invalid command." << endl;

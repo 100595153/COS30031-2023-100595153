@@ -11,7 +11,7 @@ MainMenu::~MainMenu()
 	_manager = nullptr;
 }
 
-void MainMenu::update()
+void MainMenu::Update()
 {
 	processInput();
 
@@ -37,7 +37,7 @@ void MainMenu::update()
 	}
 }
 
-void MainMenu::render()
+void MainMenu::Render()
 {
 	cout
 		<< "=============================" << endl

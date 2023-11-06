@@ -1,16 +1,17 @@
 #pragma once
 #include "Command.h"
+#include "Lock.h"
 
 class LookCommand : public Command
 {
 private:
 
 public:
-	void execute(vector<string>, Player*);
+	void Execute(vector<string>, Player*);
 
-	void look(Location*);
+	void Look(Location*);
 
-	void lookAt(Location*, string);
+	void LookAt(Location*, string);
 
-	void lookIn();
+	void LookIn(string, Player*);
 };

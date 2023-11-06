@@ -1,25 +1,28 @@
 #pragma once
-#include "Component.h"
+#include <string>
 #include <map>
+#include "Component.h"
+
+using namespace std;
 
 class GameObject
 {
 protected:
 	string _name;
 	string _desc;
+
 	map<string, Component*> _components;
 
 public:
+	virtual string GetName();
+	virtual string GetDesc();
+
+	virtual Component* GetComponent(const string&);
+	virtual bool AddComponent(Component*);
+	virtual bool RemoveComponent(const string&);
+
 	virtual void Update() = 0;
 	virtual void Render() = 0;
 
-	virtual string GetName() = 0;
-	virtual string GetDesc() = 0;
-
-	virtual void SetName(string) = 0;
-	virtual void SetDesc(string) = 0;
-
-	virtual Component* GetComponent(string) = 0;
-	virtual bool AddComponent(Component*) = 0;
-	virtual bool RemoveComponent(string) = 0;
+	virtual void Execute(const string&) = 0;
 };

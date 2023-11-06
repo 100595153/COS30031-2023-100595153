@@ -9,8 +9,8 @@ int main()
 
     while (manager->running())
     {
-        manager->current()->render();
-        manager->current()->update();
+        manager->current()->Render();
+        manager->current()->Update();
 
     }
 

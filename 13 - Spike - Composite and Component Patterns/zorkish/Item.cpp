@@ -1,15 +1,29 @@
 #include "Item.h"
 
-Item::Item(const string& name, const string& desc) : _name(name), _desc(desc) {}
+Item::Item(const string& name, const string& desc)
+{
+	_name = name;
+	_desc = desc;
+
+	_inventory = new Inventory();
+}
 
 Item::~Item() {}
 
-string Item::getName() const
+Inventory* Item::GetInventory()
 {
-	return _name;
+	return _inventory;
 }
 
-string Item::getDesc() const
+void Item::Update()
 {
-	return _desc;
+}
+
+void Item::Render()
+{
+	cout << "It's a " << _name << ". " << _desc << endl;
+}
+
+void Item::Execute(const string&)
+{
 }

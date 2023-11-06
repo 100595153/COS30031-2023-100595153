@@ -10,6 +10,6 @@ public:
 	Quit(StateManager*);
 	~Quit();
 
-	void update();
-	void render();
+	void Update();
+	void Render();
 };

@@ -12,5 +12,5 @@ public:
 	AliasCommand(CommandManager*);
 	~AliasCommand();
 
-	void execute(vector<string>, Player*);
+	void Execute(vector<string>, Player*);
 };

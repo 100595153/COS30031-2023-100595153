@@ -13,11 +13,11 @@ Inventory::~Inventory()
 	_items.clear();
 }
 
-bool Inventory::find(const string& name)
+bool Inventory::Find(const string& name)
 {
 	for (Item* item : _items)
 	{
-		if (name == item->getName())
+		if (name == item->GetName())
 		{
 			return true;
 		}
@@ -25,15 +25,22 @@ bool Inventory::find(const string& name)
 	return false;
 }
 
-void Inventory::view()
+void Inventory::Render()
 {
-	for (Item* item : _items)
-		cout << item->getName() << endl;
+	if (!_items.empty())
+	{
+		for (Item* item : _items)
+		{
+			item->Render();
+		}
+	}
+	else
+		cout << "It's empty." << endl;
 }
 
-bool Inventory::add(Item* item)
+bool Inventory::Add(Item* item)
 {
-	if (item != nullptr && !find(item->getName()))
+	if (item != nullptr && !Find(item->GetName()))
 	{
 		_items.push_back(item);
 		return true;
@@ -41,22 +48,22 @@ bool Inventory::add(Item* item)
 	return false;
 }
 
-Item* Inventory::get(const string& name)
+Item* Inventory::Get(const string& name)
 {
 	for (Item* item : _items)
 	{
-		if (name == item->getName())
+		if (name == item->GetName())
 			return item;
 	}
 
-	return new Item("Error", "Invalid item.");
+	return nullptr;
 }
 
-bool Inventory::remove(const string& name)
+bool Inventory::Remove(const string& name)
 {
 	for (auto iter = _items.begin(); iter != _items.end(); ++iter)
 	{
-		if ((*iter)->getName() == name)
+		if ((*iter)->GetName() == name)
 		{
 			_items.erase(iter);
 			return true;

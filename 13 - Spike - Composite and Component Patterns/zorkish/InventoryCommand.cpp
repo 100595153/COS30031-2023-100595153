@@ -1,6 +1,6 @@
 #include "InventoryCommand.h"
 
-void InventoryCommand::execute(vector<string> command, Player* player)
+void InventoryCommand::Execute(vector<string> command, Player* player)
 {
-	player->getInventory()->view();
+	player->GetInventory()->Render();
 }

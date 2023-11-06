@@ -9,6 +9,6 @@ public:
 	HallOfFame(StateManager*);
 	~HallOfFame();
 
-	void update();
-	void render();
+	void Update();
+	void Render();
 };

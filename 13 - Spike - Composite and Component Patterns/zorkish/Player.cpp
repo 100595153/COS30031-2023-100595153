@@ -1,13 +1,15 @@
 #include "Player.h"
+#include "Lock.h"
 
-Player::Player(Location* loc, Inventory* inv) : _location(loc), _inventory(inv)
+Player::Player(Location* loc, Inventory* inv)
 {
-	_components = new map<string, Component*>();
+	_inventory = inv;
+	_location = loc;
+	_locName = _location->GetName();
 
-	_components->emplace("health", new Health(100));
-
-	_locName = _location->getName();
-
+	Item* item = new Item("bag", "oh no");
+	item->AddComponent(new Lock());
+	_inventory->Add(item);
 }
 
 Player::~Player()
@@ -20,32 +22,46 @@ Player::~Player()
 	_inventory = nullptr;
 }
 
-Inventory* Player::getInventory()
+bool Player::CheckDirection(const string& dir)
 {
-	return _inventory;
+	return _location->GetConnection(dir) == "";
 }
 
-bool Player::checkDirection(const string& dir)
-{
-	return _location->findConnection(dir) == "";
-}
-
-Location* Player::getLocation()
+Location* Player::GetLocation()
 {
 	return _location;
 }
 
-string Player::getLocName()
+string Player::GetLocName()
 {
 	return _locName;
 }
 
-void Player::setLocName(const string& locName)
+void Player::SetLocName(const string& locName)
 {
 	_locName = locName;
 }
 
-void Player::setLocation(Location* loc)
+void Player::SetLocation(Location* loc)
 {
 	_location = loc;
+}
+
+Inventory* Player::GetInventory()
+{
+	return _inventory;
+}
+
+void Player::Update()
+{
+}
+
+void Player::Render()
+{
+	cout << "You're in " << _location->GetName() << ". " 
+		<< "What will you do?" << endl;
+}
+
+void Player::Execute(const string&)
+{
 }

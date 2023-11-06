@@ -6,6 +6,8 @@
 
 using namespace std;
 
+class Item;
+
 class Inventory
 {
 private:
@@ -15,12 +17,12 @@ public:
 	Inventory();
 	~Inventory();
 
-	bool find(const string&);
+	bool Find(const string&);
 
-	void view();
+	void Render();
 
-	bool add(Item*);
-	bool remove(const string&);
+	bool Add(Item*);
+	bool Remove(const string&);
 
-	Item* get(const string&);
+	Item* Get(const string&);
 };

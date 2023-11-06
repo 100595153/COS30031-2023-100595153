@@ -41,10 +41,7 @@
       <UniqueIdentifier>{33b8f9f6-4199-4a41-bd26-46ce5a6315c5}</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files\Components">
-      <UniqueIdentifier>{417c41f5-61d9-4367-b6ba-a3b8598dcbdf}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Components">
-      <UniqueIdentifier>{b233f312-560c-4a0c-a3de-ed7ae00b8e5c}</UniqueIdentifier>
+      <UniqueIdentifier>{0896bac0-24e7-4bb3-aa1e-36910b541642}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -114,11 +111,26 @@
     <ClCompile Include="HelpCommand.cpp">
       <Filter>Source Files\Commands</Filter>
     </ClCompile>
-    <ClCompile Include="Closed.cpp">
-      <Filter>Source Files\Components</Filter>
+    <ClCompile Include="Component.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Lock.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Health.cpp">
-      <Filter>Source Files\Components</Filter>
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TakeCommand.cpp">
+      <Filter>Source Files\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject.cpp">
+      <Filter>Source Files\Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="PutCommand.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="OpenCommand.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -197,20 +209,26 @@
     <ClInclude Include="DebugCommand.h">
       <Filter>Header Files\Commands</Filter>
     </ClInclude>
+    <ClInclude Include="GameObject.h">
+      <Filter>Header Files\Entities</Filter>
+    </ClInclude>
     <ClInclude Include="Component.h">
+      <Filter>Header Files\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Lock.h">
       <Filter>Header Files\Components</Filter>
     </ClInclude>
     <ClInclude Include="Health.h">
       <Filter>Header Files\Components</Filter>
     </ClInclude>
-    <ClInclude Include="Closed.h">
-      <Filter>Header Files\Components</Filter>
+    <ClInclude Include="TakeCommand.h">
+      <Filter>Header Files\Commands</Filter>
     </ClInclude>
-    <ClInclude Include="GameObject.h">
-      <Filter>Header Files\Entities</Filter>
+    <ClInclude Include="PutCommand.h">
+      <Filter>Header Files\Commands</Filter>
     </ClInclude>
-    <ClInclude Include="CurrentLocation.h">
-      <Filter>Header Files\Components</Filter>
+    <ClInclude Include="OpenCommand.h">
+      <Filter>Header Files\Commands</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

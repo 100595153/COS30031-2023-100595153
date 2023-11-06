@@ -16,7 +16,7 @@ Score::~Score()
 {
 }
 
-void Score::update()
+void Score::Update()
 {
 	processInput();
 
@@ -24,7 +24,7 @@ void Score::update()
 	_manager->push_state(new HallOfFame(_manager));
 }
 
-void Score::render()
+void Score::Render()
 {
 	cout
 		<< "-----------------" << endl

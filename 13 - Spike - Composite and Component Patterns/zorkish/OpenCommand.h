@@ -1,10 +1,8 @@
 #pragma once
 #include "Command.h"
+#include "Lock.h"
 
-class InventoryCommand : public Command
+class OpenCommand : public Command
 {
-private:
-
-public:
 	void Execute(vector<string>, Player*);
 };

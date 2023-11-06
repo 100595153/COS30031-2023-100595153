@@ -23,12 +23,12 @@ public:
     GameWorld(json);
     ~GameWorld();
 
-    vector<string> splitString(string);
+    vector<string> SplitString(string);
 
-    Location* getLocation(string);
+    Location* GetLocation(string);
 
-    bool running();
+    bool Running();
 
-    void update();
-    void render();
+    void Update();
+    void Render();
 };

@@ -1,25 +1,25 @@
 #pragma once
 #include <string>
-#include <map>
-#include "Component.h"
+#include <iostream>
+#include "GameObject.h"
+#include "Inventory.h"
 
 using namespace std;
 
-class Item
-{
-protected:
-	string _name;
-	string _desc;
+class Inventory;
 
-	map<string, Component*> _components;
+class Item : public GameObject
+{
+private:
+	Inventory* _inventory;
 
 public:
 	Item(const string&, const string&);
 	~Item();
 
-	string getName() const;
-	string getDesc() const;
+	Inventory* GetInventory();
 
-	Component* GetComponent(string);
-	void AddComponent(Component*);
+	void Update();
+	void Render();
+	void Execute(const string&);
 };

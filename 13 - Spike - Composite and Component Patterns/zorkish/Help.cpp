@@ -9,7 +9,7 @@ Help::~Help()
 {
 }
 
-void Help::update()
+void Help::Update()
 {
 	processInput();
 
@@ -22,7 +22,7 @@ void Help::update()
 	}
 }
 
-void Help::render()
+void Help::Render()
 {
 	cout << endl
 		<< "The following commands are supported:" << endl

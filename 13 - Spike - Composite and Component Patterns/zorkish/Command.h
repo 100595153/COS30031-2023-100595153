@@ -10,5 +10,5 @@ class Command
 protected:
 
 public:
-	virtual void execute(vector<string>, Player*) = 0;
+	virtual void Execute(vector<string>, Player*) = 0;
 };

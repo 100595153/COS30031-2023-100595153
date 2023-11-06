@@ -10,8 +10,10 @@ protected:
 	string _name;
 
 public:
+	virtual string GetName() const;
+
 	virtual void Update() = 0;
 	virtual void Render() = 0;
 
-	virtual void Execute(string) = 0;
+	virtual void Execute(const string&) = 0;
 };

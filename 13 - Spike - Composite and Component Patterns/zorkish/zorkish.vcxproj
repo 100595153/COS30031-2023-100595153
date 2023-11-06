@@ -129,15 +129,19 @@
   <ItemGroup>
     <ClCompile Include="About.cpp" />
     <ClCompile Include="AliasCommand.cpp" />
-    <ClCompile Include="Closed.cpp" />
     <ClCompile Include="CommandManager.cpp" />
+    <ClCompile Include="Component.cpp" />
     <ClCompile Include="DebugCommand.cpp" />
+    <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="GoCommand.cpp" />
     <ClCompile Include="Health.cpp" />
     <ClCompile Include="HelpCommand.cpp" />
     <ClCompile Include="InventoryCommand.cpp" />
+    <ClCompile Include="Lock.cpp" />
     <ClCompile Include="LookCommand.cpp" />
+    <ClCompile Include="OpenCommand.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="PutCommand.cpp" />
     <ClCompile Include="StateManager.cpp" />
     <ClCompile Include="Gameplay.cpp" />
     <ClCompile Include="HallOfFame.cpp" />
@@ -150,23 +154,25 @@
     <ClCompile Include="GameWorld.cpp" />
     <ClCompile Include="Quit.cpp" />
     <ClCompile Include="Score.cpp" />
+    <ClCompile Include="TakeCommand.cpp" />
     <ClCompile Include="zorkish.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="About.h" />
     <ClInclude Include="AliasCommand.h" />
-    <ClInclude Include="Closed.h" />
     <ClInclude Include="Command.h" />
     <ClInclude Include="CommandManager.h" />
     <ClInclude Include="Component.h" />
-    <ClInclude Include="CurrentLocation.h" />
     <ClInclude Include="DebugCommand.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="GoCommand.h" />
     <ClInclude Include="Health.h" />
     <ClInclude Include="HelpCommand.h" />
     <ClInclude Include="InventoryCommand.h" />
+    <ClInclude Include="Lock.h" />
     <ClInclude Include="LookCommand.h" />
+    <ClInclude Include="OpenCommand.h" />
+    <ClInclude Include="PutCommand.h" />
     <ClInclude Include="StateManager.h" />
     <ClInclude Include="Gameplay.h" />
     <ClInclude Include="HallOfFame.h" />
@@ -183,6 +189,7 @@
     <ClInclude Include="Score.h" />
     <ClInclude Include="State.h" />
     <ClInclude Include="STATES.h" />
+    <ClInclude Include="TakeCommand.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="world1.json" />

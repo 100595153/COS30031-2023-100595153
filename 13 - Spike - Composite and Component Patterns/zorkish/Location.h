@@ -7,31 +7,23 @@
 using json = nlohmann::json;
 using namespace std;
 
-class Location
+class Location : public GameObject
 {
 private:
-	string _name;
-	string _desc;
+	Inventory* _inventory;
 
-	map<string, string> _connections;//May move to /gamelocation manager at some stage.
+	map<string, Component*> _components;
+	map<string, string> _connections;
 
-	Inventory _inventory;
 public:
 	Location(json);
 	~Location();
 
-	//Descriptors
-	string getName() const;
-	string getDesc() const;
+	string GetConnection(const string&);
+	Inventory* GetInventory();
 
-	//Connections
-	string findConnection(const string&);
-	void showConnections();
+	void Update();
+	void Render();
 
-	//Inventory interface
-	bool findItem(const string&);
-	void viewItems();
-	bool addItem(Item*);
-	bool removeItem(const string&);
-	Item* getItem(const string&);
+	void Execute(const string&);
 };

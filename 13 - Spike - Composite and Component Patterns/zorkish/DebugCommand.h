@@ -7,5 +7,5 @@ class DebugCommand : public Command
 private:
 
 public:
-	void execute(vector<string>, Player*);
+	void Execute(vector<string>, Player*);
 };

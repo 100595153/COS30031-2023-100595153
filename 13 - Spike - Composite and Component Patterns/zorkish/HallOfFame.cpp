@@ -9,7 +9,7 @@ HallOfFame::~HallOfFame()
 {
 }
 
-void HallOfFame::update()
+void HallOfFame::Update()
 {
 	processInput();
 
@@ -23,7 +23,7 @@ void HallOfFame::update()
 	}
 }
 
-void HallOfFame::render()
+void HallOfFame::Render()
 {
 	cout
 		<< "High Score - Hall of Fame:" << endl

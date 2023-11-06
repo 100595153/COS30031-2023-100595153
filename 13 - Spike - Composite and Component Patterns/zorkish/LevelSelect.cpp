@@ -9,7 +9,7 @@ LevelSelect::~LevelSelect()
 {
 }
 
-void LevelSelect::update()
+void LevelSelect::Update()
 {
 	processInput();
 
@@ -29,7 +29,7 @@ void LevelSelect::update()
 	}
 }
 
-void LevelSelect::render()
+void LevelSelect::Render()
 {
 	cout
 		<< "Select Adventure:" << endl

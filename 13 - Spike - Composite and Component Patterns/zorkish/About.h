@@ -8,6 +8,6 @@ public:
 	About(StateManager*);
 	~About();
 
-	void update();
-	void render();
+	void Update();
+	void Render();
 };

@@ -1,6 +1,6 @@
 #include "GoCommand.h"
 
-void GoCommand::execute(vector<string> command, Player* player)
+void GoCommand::Execute(vector<string> command, Player* player)
 {
 	if (command.size() == 1)
 	{
@@ -8,9 +8,9 @@ void GoCommand::execute(vector<string> command, Player* player)
 	}
 	else if(command.size() == 2)
 	{
-		Location* pLoc = player->getLocation();
+		Location* pLoc = player->GetLocation();
 
-		const string pCon = pLoc->findConnection(command.at(1));
+		const string pCon = pLoc->GetConnection(command.at(1));
 
 		if (pCon == "")
 		{
@@ -18,7 +18,7 @@ void GoCommand::execute(vector<string> command, Player* player)
 		}
 		else
 		{
-			player->setLocName(pCon);
+			player->SetLocName(pCon);
 		}
 	}
 	else

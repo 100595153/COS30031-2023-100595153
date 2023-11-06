@@ -14,12 +14,12 @@ Location::Location(json data)
 		_connections.emplace(connection["direction"], connection["name"]);
 	}
 
-	_inventory = Inventory();
+	_inventory = new Inventory();
 
 	//inventory
 	for (json item : data["inventory"])
 	{
-		_inventory.add(new Item(item["name"], item["desc"]));
+		_inventory->Add(new Item(item["name"], item["desc"]));
 	}
 }
 
@@ -27,54 +27,38 @@ Location::~Location()
 {
 }
 
-string Location::getName() const
+string Location::GetConnection(const string& direction)
 {
-	return _name;
-}
+	auto iterator = _connections.find(direction);
 
-string Location::getDesc() const
-{
-	return _desc;
-}
-
-string Location::findConnection(const string& dir)
-{
-	if (_connections.find(dir) != _connections.end())
-		return _connections[dir];
-	else
+	if (iterator == _connections.end())
 		return "";
+	else
+		return iterator->second;
 }
 
-void Location::showConnections()
+Inventory* Location::GetInventory()
 {
-	for (auto const& con : _connections)
+	return _inventory;
+}
+
+void Location::Update()
+{
+}
+
+void Location::Render()
+{
+	cout << "You find yourself in " << _name << "." << endl;
+	cout << _desc << endl;
+	
+	for (pair<string, string> dir : _connections)
 	{
-		cout << con.first << " ";
+		cout << "You see an exit to the " << dir.first << "." << endl;
 	}
-	cout << endl;
+
+	_inventory->Render();
 }
 
-bool Location::findItem(const string& name)
+void Location::Execute(const string&)
 {
-	return _inventory.find(name);
-}
-
-void Location::viewItems()
-{
-	_inventory.view();
-}
-
-bool Location::addItem(Item* item)
-{
-	return _inventory.add(item);
-}
-
-bool Location::removeItem(const string& name)
-{
-	return _inventory.remove(name);
-}
-
-Item* Location::getItem(const string& name)
-{
-	return _inventory.get(name);
 }

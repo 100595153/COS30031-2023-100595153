@@ -22,6 +22,6 @@ private:
 public:
 	Gameplay(StateManager*, string);
 	~Gameplay();
-	void update();
-	void render();
+	void Update();
+	void Render();
 };

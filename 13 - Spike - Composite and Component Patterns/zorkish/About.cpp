@@ -9,7 +9,7 @@ About::~About()
 {
 }
 
-void About::update()
+void About::Update()
 {
 	processInput();
 
@@ -23,7 +23,7 @@ void About::update()
 	}
 }
 
-void About::render()
+void About::Render()
 {
 	cout << endl
 		<< "Written by: Mitchell Wright" << endl

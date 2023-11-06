@@ -1,31 +1,32 @@
 #pragma once
-#include "Inventory.h"
-#include "Location.h"
 #include "GameObject.h"
-#include "Health.h"
-#include <map>
-#include <string>
-
+#include "Location.h"
+#include "Inventory.h"
 
 class Player : public GameObject
 {
 private:
 	Inventory* _inventory;
+
 	string _locName;
 	Location* _location;
-	map<string, Component*>* _components;
 
 public:
 	Player(Location*, Inventory*);
 	~Player();
 
-	Inventory* getInventory();
+	bool CheckDirection(const string&);
 
-	bool checkDirection(const string&);
+	string GetLocName();
+	void SetLocName(const string&);
 
-	string getLocName();
-	void setLocName(const string&);
+	Location* GetLocation();
+	void SetLocation(Location*);
 
-	Location* getLocation();
-	void setLocation(Location*);
+	Inventory* GetInventory();
+
+	void Update();
+	void Render();
+
+	void Execute(const string&);
 };

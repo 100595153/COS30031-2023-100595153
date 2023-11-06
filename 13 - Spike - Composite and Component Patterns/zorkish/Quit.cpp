@@ -9,7 +9,7 @@ Quit::~Quit()
 {
 }
 
-void Quit::update()
+void Quit::Update()
 {
 	processInput();
 
@@ -27,7 +27,7 @@ void Quit::update()
 	}
 }
 
-void Quit::render()
+void Quit::Render()
 {
 	cout
 		<< "Quit to desktop?" << endl

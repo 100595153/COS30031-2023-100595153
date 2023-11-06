@@ -18,18 +18,18 @@ GameWorld::GameWorld(json data) : _running(true)
 
 GameWorld::~GameWorld() {} //TODO
 
-Location* GameWorld::getLocation(string locName)
+Location* GameWorld::GetLocation(string locName)
 {
 	for (Location* loc : _locations)
 	{
-		if (loc->getName() == locName)
+		if (loc->GetName() == locName)
 			return loc;
 	}
 
 	return NULL;
 }
 
-vector<string> GameWorld::splitString(string input)
+vector<string> GameWorld::SplitString(string input)
 {
 	vector<string> result;
 
@@ -53,26 +53,26 @@ vector<string> GameWorld::processInput()
 
 	getline(cin, input);
 
-	return splitString(input);
+	return SplitString(input);
 }
 
 void GameWorld::movePlayer()
 {
-	_player->setLocation(getLocation(_player->getLocName()));
+	_player->SetLocation(GetLocation(_player->GetLocName()));
 }
 
-bool GameWorld::running()
+bool GameWorld::Running()
 {
 	return _running;
 }
 
-void GameWorld::update()
+void GameWorld::Update()
 {
 	_commandManager->processCommand(processInput());
 	movePlayer();
 }
 
-void GameWorld::render()
+void GameWorld::Render()
 {
-	cout << _player->getLocation()->getDesc() << endl << ">> ";
+	_player->Render();
 }

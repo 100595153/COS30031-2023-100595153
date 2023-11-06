@@ -22,12 +22,12 @@ Gameplay::~Gameplay()
 {
 }
 
-void Gameplay::update()
+void Gameplay::Update()
 {
-	_gameWorld->update();
+	_gameWorld->Update();
 }
 
-void Gameplay::render()
+void Gameplay::Render()
 {
-	_gameWorld->render();
+	_gameWorld->Render();
 }

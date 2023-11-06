@@ -14,6 +14,6 @@ private:
 public:
 	Score(StateManager*);
 	~Score();
-	void update();
-	void render();
+	void Update();
+	void Render();
 };
